@@ -578,8 +578,61 @@ body {
 .overlay-text {
   color: #f4f4fd;
 }
-.portfolio-item:hover .overlay-hover {
+.portfilio-link:hover .overlay-hover,
+.portfilio-link:focus .overlay-hover {
   transform: translateY(0);
 }
 
 /* ================== /portfolio ================== */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(46, 47, 66, 0.4);
+  width: 100%;
+  height: 100%;
+  transition: opacity var(--time-and-style-of-transition),
+    visibility var(--time-and-style-of-transition);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  height: 576px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  transition: transform var(--time-and-style-of-transition);
+}
+
+.is-hidden .modal-form {
+  transform: translate(-50%, -50%) scale(0.8);
+}
+.modal-close-button {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  background: #e7e9fc;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
