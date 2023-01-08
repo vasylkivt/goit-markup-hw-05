@@ -189,7 +189,7 @@ body {
 }
 .corrent::after {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   display: block;
   opacity: 1;
   content: '';
